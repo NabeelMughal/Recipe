@@ -54,7 +54,7 @@ export default function CategoryPage() {
       <div className="max-w-3xl mx-auto">
         <button
           onClick={() => router.back()}
-          className="p-3 rounded-full bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
+          className="px-4 py-2 mb-4 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
         >
           ← Back
         </button>
@@ -68,7 +68,7 @@ export default function CategoryPage() {
           </div>
           <button
             onClick={() => router.push(`/recipe/new?categoryId=${id}`)}
-            className="p-3 rounded-full bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform sticky bottom-3 right-3 text-white"
+            className="px-4 py-2 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform sticky bottom-3 right-3 text-white"
           >
             + Add
           </button>

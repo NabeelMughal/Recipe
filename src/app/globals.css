@@ -17,6 +17,10 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+
+  .ingredients{
+  list-style-type: disclosure-closed;
+}
 }
 
 body {

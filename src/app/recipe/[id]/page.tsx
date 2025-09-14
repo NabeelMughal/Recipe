@@ -112,16 +112,19 @@ export default function RecipeDetailPage() {
         <div className="flex justify-between items-center">
           <button
             onClick={() => router.back()}
-            className="p-3 rounded-full bg-[#E0AB8B] text-white hover:bg-[#c89273] transition"
+            className="px-4 py-2 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
           >
             ← Back
           </button>
           <button
             onClick={deleteRecipe}
-            className="p-3 rounded-full bg-red-500 text-white hover:bg-red-600 transition"
+            className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition"
             title="Delete Recipe"
           >
-            🗑
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+            </svg>
+
           </button>
         </div>
 
@@ -148,20 +151,23 @@ export default function RecipeDetailPage() {
                   setIsEditingTitle(false);
                   if (titleValue.trim()) updateRecipe({ name: titleValue });
                 }}
-                className="text-4xl font-extrabold tracking-tight text-[#E0AB8B] bg-transparent border-b border-[#E0AB8B] focus:outline-none"
+                className="text-2xl font-semibold tracking-tight text-[#E0AB8B] bg-transparent border-b border-[#E0AB8B] focus:outline-none"
                 autoFocus
               />
             ) : (
-              <h1 className="text-4xl font-extrabold tracking-tight text-[#E0AB8B]">
+              <h1 className="text-2xl font-semibold tracking-tight text-[#E0AB8B]">
                 {recipe.name}
               </h1>
             )}
-            <button onClick={() => setIsEditingTitle((p) => !p)}>
-              ✏️
+            <button className="text-[#E0AB8B]" onClick={() => setIsEditingTitle((p) => !p)}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+              </svg>
+
             </button>
           </div>
 
-          <div className="bg-[#FFEEE7] rounded-md mt-2 mb-3 relative shadow-md p-3 overflow-hidden">
+          <div className="flex justify-between items-center bg-[#FFEEE7] rounded-md mt-2 mb-3 relative shadow-md p-3 overflow-hidden">
             {isEditingDescription ? (
               <textarea
                 value={descValue}
@@ -180,9 +186,11 @@ export default function RecipeDetailPage() {
             )}
             <button
               onClick={() => setIsEditingDescription((p) => !p)}
-              className="absolute top-1 right-1"
+              className="text-[#E0AB8B]"
             >
-              ✏️
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+              </svg>
             </button>
           </div>
         </div>
@@ -200,9 +208,9 @@ export default function RecipeDetailPage() {
           <h2 className="text-2xl font-semibold mb-3 text-[#5C3D2E]">
             🥕 Ingredients
           </h2>
-          <ul className="list-disc list-inside space-y-1 text-[#5C3D2E]">
+          <ul className="ingredients list-inside space-y-1 text-[#5C3D2E]">
             {(recipe.ingredients ?? []).map((i, idx) => (
-              <li key={idx}>{i}</li>
+              <li className="" key={idx}>{i}</li>
             ))}
           </ul>
           <div className="mt-3 flex gap-2">
@@ -231,7 +239,7 @@ export default function RecipeDetailPage() {
           <h2 className="text-2xl font-semibold mb-3 text-[#5C3D2E]">
             📖 Steps
           </h2>
-          <ol className="list-decimal list-inside space-y-2 text-[#5C3D2E]">
+          <ol className="ingredients list-inside space-y-2 text-[#5C3D2E]">
             {(recipe.steps ?? []).map((s, idx) => (
               <li key={idx}>{s}</li>
             ))}
@@ -288,10 +296,18 @@ export default function RecipeDetailPage() {
               }}
               className="bg-[#E0AB8B] text-white hover:bg-[#c89273] rounded-md transition h-fit px-3 py-2"
             >
-              Save
+              Add
             </button>
           </div>
         </section>
+        <div className="">
+            <button
+              onClick={() => router.back()}
+              className="px-4 py-3 w-full font-semibold text-lg flex items-center justify-center cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
+            >
+              ← Back
+            </button>
+          </div>
       </div>
     </div>
   );

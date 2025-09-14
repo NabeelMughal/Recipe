@@ -66,7 +66,7 @@ function RecipeForm() {
       <div className="max-w-lg mx-auto space-y-6">
         <button
           onClick={() => window.history.back()}
-          className="p-3 rounded-full bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
+          className="px-4 py-2 mb-4 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
         >
           ← Back
         </button>
