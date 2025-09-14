@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "cloudinary": "^2.7.0",
+    "cloudinary": "^1.21.0",
     "framer-motion": "^12.23.12",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.544.0",
