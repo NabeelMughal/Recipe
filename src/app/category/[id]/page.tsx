@@ -54,9 +54,12 @@ export default function CategoryPage() {
       <div className="max-w-3xl mx-auto">
         <button
           onClick={() => router.back()}
-          className="px-4 py-2 mb-4 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
+          className="px-4 py-2 mb-6 flex items-center justify-center gap-2 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform flex items-center text-white"
         >
-          ← Back
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+          Back
         </button>
 
         <header className="mb-6 flex items-center justify-between">
@@ -68,9 +71,13 @@ export default function CategoryPage() {
           </div>
           <button
             onClick={() => router.push(`/recipe/new?categoryId=${id}`)}
-            className="px-4 py-2 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform sticky bottom-3 right-3 text-white"
+            className="px-4 py-2 flex items-center justify-center gap-1 cursor-pointer rounded-md bg-gradient-to-r from-[#E0AB8B] to-[#c97c54] shadow-md hover:scale-105 transition-transform sticky bottom-3 right-3 text-white"
           >
-            + Add
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+
+             Add
           </button>
         </header>
 
